@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inventory-management/inventory.iml" filepath="$PROJECT_DIR$/inventory-management/inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-management/order.iml" filepath="$PROJECT_DIR$/order-management/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/supermarket-app.iml" filepath="$PROJECT_DIR$/.idea/supermarket-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tracking-information-management/tracking.iml" filepath="$PROJECT_DIR$/tracking-information-management/tracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-management/user-management.iml" filepath="$PROJECT_DIR$/user-management/user-management.iml" />
+    </modules>
+  </component>
+</project>
