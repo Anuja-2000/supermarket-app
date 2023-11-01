@@ -42,6 +42,16 @@ public class ItemService {
         return items.stream().map(this::mapToItemResponse).toList();
     }
 
+    public ItemResponse getItemById(String id){
+        Item item = itemRepository.findById(id).orElse(null);
+        if(item!=null){
+            return mapToItemResponse(item);
+        }else {
+            return null;
+        }
+
+    }
+
     public ItemResponse mapToItemResponse(Item item){
         return new ItemResponse(
                 item.getId(),
@@ -53,4 +63,5 @@ public class ItemService {
                 item.getLastUpdated()
         );
     }
+
 }
