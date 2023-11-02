@@ -24,13 +24,25 @@ public class ItemController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createItem(@RequestBody ItemRequest itemRequest){
+    public void createItem(@RequestBody ItemRequest itemRequest) {
         itemService.createItem(itemRequest);
     }
 
     @GetMapping("/items")
     @ResponseStatus(HttpStatus.OK)
-    public List<ItemResponse> getAllItems(){
+    public List<ItemResponse> getAllItems() {
         return itemService.getAllItems();
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public Item updateItem(@RequestBody ItemResponse updatedItem) {
+        return itemService.updateItem(updatedItem);
+    }
+
+    @DeleteMapping("/delete")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public boolean deleteItem(@PathVariable(value="id") String id) {
+        return itemService.deleteItem(id);
     }
 }

@@ -53,4 +53,27 @@ public class ItemService {
                 item.getLastUpdated()
         );
     }
+
+    public Item updateItem(ItemResponse updatedItem) {
+        Item item = itemRepository.findById(updatedItem.getId()).orElse(null);
+        if (item != null) {
+            item.setName(updatedItem.getName());
+            item.setDescription(updatedItem.getDescription());
+            item.setQuantity(updatedItem.getQuantity());
+            item.setPrice(updatedItem.getPrice());
+            item.setAddedBy(updatedItem.getAddedBy());
+            item.setLastUpdated( new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(new Date()));
+            return itemRepository.save(item);
+        }
+        return null;
+    }
+
+    public boolean deleteItem(String id) {
+        Item item = itemRepository.findById(id).orElse(null);
+        if (item != null) {
+            itemRepository.delete(item);
+            return true;
+        }
+        return false;
+    }
 }
